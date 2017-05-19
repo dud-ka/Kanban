@@ -50,6 +50,36 @@ $(function() {
     }
   }
   //END Column stuff
+  //Card stuff
+  function Card(description) {
+    var self = this;
 
+    this.id = randomString();
+    this.description = description;
+    this.$element = createCard();
 
+    function createCard() {
+      //card elements
+      var $card = $('<li>').addClass('card');
+      var $cardDescription = $('<p>').addClass('card-description').text(self.description);
+      var $cardDelete = $('<button>').addClass('btn-delete').text('x');
+
+      //card events
+      $cardDelete.click(function(){
+        self.removeCard();
+      });
+
+      //card construction
+      $card.append($cardDelete)
+      .append($cardDescription);
+      return $card;
+
+      Card.prototype = {
+        removeCard: function() {
+          this.$element.remove();
+        }
+      }
+    }
+  }
+  //END card stuff
 })
