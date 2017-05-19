@@ -106,4 +106,22 @@ $(function() {
     board.addColumn(column);
   });
   //END BOARD
-})
+ // columns create
+ var todoColumn = new Column('TO DO');
+ var doingColumn = new Column('DOING');
+ var doneColumn = new Column('DONE');
+
+// add columns to the board
+board.addColumn(todoColumn);
+board.addColumn(doingColumn);
+board.addColumn(doneColumn);
+
+// create new cards
+var card1 = new Card('New task');
+var card2 = new Card('Create Kanban Board');
+
+// add cards to columns
+todoColumn.addCard(card1);
+doingColumn.addCard(card2);
+});
+
