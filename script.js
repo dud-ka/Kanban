@@ -82,4 +82,14 @@ $(function() {
     }
   }
   //END card stuff
+  //Board
+  var board = {
+    name: 'Kanban board',
+    addColumn: function(column) {
+      this.$element.append(column.$element);
+      initSortable();
+    },
+    $element: $('#board .column-container')
+  };
+  //END BOARD
 })
