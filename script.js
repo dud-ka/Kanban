@@ -91,5 +91,19 @@ $(function() {
     },
     $element: $('#board .column-container')
   };
+
+  function initSortable() {
+    $('.column-card-list').sortable({
+      connectWith: '.column-card-list',
+      placeholder: 'card-placeholder'
+    }).disableSelection();
+  }
+
+  $('.create-column')
+  .click(function(){
+    var name = prompt('Wpisz nazwę kolumny');
+    var column = new Column(name);
+    board.addColumn(column);
+  });
   //END BOARD
 })
