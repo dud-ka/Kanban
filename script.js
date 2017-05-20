@@ -1,11 +1,13 @@
 $(function() {
 	// select random string
-  var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ';
-  var str = '';
-  for (i=0; i < 10; i++) {
-    str += chars[Math.floor(Math.random() * chars.length)]
+  function randomString() {
+    var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ';
+    var str = '';
+    for (i=0; i < 10; i++) {
+      str += chars[Math.floor(Math.random() * chars.length)]
+    }
+    return str;
   }
-  return str;
   // END select random string
   // Column stuff
   function Column(name) {
@@ -38,17 +40,17 @@ $(function() {
       .append($columnCardList);
 
       return $column;
-
-      Column.prototype = {
-        addCard: function(card) {
-          this.$element.children('ul').append(card.$element);
-        },
-        removeColumn: function() {
-          this.$element.remove();
-        }
-      };
     }
   }
+
+  Column.prototype = {
+    addCard: function(card) {
+      this.$element.children('ul').append(card.$element);
+    },
+    removeColumn: function() {
+      this.$element.remove();
+    }
+  };
   //END Column stuff
   //Card stuff
   function Card(description) {
@@ -73,12 +75,12 @@ $(function() {
       $card.append($cardDelete)
       .append($cardDescription);
       return $card;
+    }
+  }
 
-      Card.prototype = {
-        removeCard: function() {
-          this.$element.remove();
-        }
-      }
+  Card.prototype = {
+    removeCard: function() {
+      this.$element.remove();
     }
   }
   //END card stuff
@@ -100,11 +102,11 @@ $(function() {
   }
 
   $('.create-column')
-  .click(function(){
-    var name = prompt('Wpisz nazwę kolumny');
-    var column = new Column(name);
-    board.addColumn(column);
-  });
+    .click(function(){
+      var name = prompt('Wpisz nazwę kolumny');
+      var column = new Column(name);
+      board.addColumn(column);
+    });
   //END BOARD
  // columns create
  var todoColumn = new Column('TO DO');
