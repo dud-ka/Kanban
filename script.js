@@ -19,7 +19,7 @@ $(function() {
 
     function createColumn() {
       //column elements
-      var $column = $('<div>').addClass('column');
+      var $column = $('<div>').addClass('column col-4');
       var $columnTitle = $('<h2>').addClass('column-title').text(self.name);
       var $columnCardList = $('<ul>').addClass('column-card-list');
       var $columnDelete = $('<button>').addClass('btn-delete').text('x');
