@@ -30,7 +30,7 @@ $(function() {
         self.removeColumn();
       });
       $columnAddCard.click(function() {
-        self.addCard(new Card(prompt("Wpisz nazwę karty")));
+        self.addCard(new Card(prompt("Enter card name")));
       });
       
       //column construction
@@ -103,7 +103,7 @@ $(function() {
 
   $('.create-column')
   .click(function(){
-   var name = prompt('Wpisz nazwę kolumny');
+   var name = prompt('Enter column name');
    var column = new Column(name);
    board.addColumn(column);
  });
