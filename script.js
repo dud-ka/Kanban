@@ -23,7 +23,7 @@ $(function() {
       var $columnTitle = $('<h2>').addClass('column-title').text(self.name);
       var $columnCardList = $('<ul>').addClass('column-card-list');
       var $columnDelete = $('<button>').addClass('btn-delete').text('x');
-      var $columnAddCard = $('<button>').addClass('add-card').text('Dodaj kartę'); //czy na początku każdej zmiennej musi być "$" ?
+      var $columnAddCard = $('<button>').addClass('add-card').text('Add card'); //czy na początku każdej zmiennej musi być "$" ?
 
       //column events
       $columnDelete.click(function() {
