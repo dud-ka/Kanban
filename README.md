@@ -1,3 +1,3 @@
 # Kanban board
 
-https://dud-ka.github.io/Kanban/
+https://kjanota.github.io/Kanban/
